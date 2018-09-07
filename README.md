@@ -1,4 +1,6 @@
 ----------
+These code make exafs_coeff.dat for RMC++
+----------
 exafs_coeff_simple
 
 Prepare feff.inp
