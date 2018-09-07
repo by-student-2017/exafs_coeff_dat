@@ -42,6 +42,10 @@ command
 
 chmod +x exafs_coeff_beta1
 
+exafs_coeff_beta1 atom1 atom2
+
+for example,
+
 exafs_coeff_beta1 Ge Te
 
 automatically makes feff.inp
