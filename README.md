@@ -50,6 +50,6 @@ exafs_coeff_beta1 Ge Te
 
 automatically makes feff.inp
 
-However, smoll distance case show error
+However, smoll distance case shows error
 
 ----------
