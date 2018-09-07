@@ -27,4 +27,23 @@ ATOMS * this list contains 2 atoms
 0.00000 0.00000 0.00000 0 32 0.00000 0
 
 X.X 0.00000 0.00000 1 52 X.X 1
+
+
+command
+
+chmod +x exafs_coeff_simple
+
+exafs_coeff_simple
+
+----------
+exafs_coeff_beta1
+
+for example,
+
+exafs_coeff_beta Ge Te
+
+automatically makes feff.inp
+
+However, smoll distance case show error
+
 ----------
