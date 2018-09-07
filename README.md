@@ -1,5 +1,5 @@
 ----------
-These code make exafs_coeff.dat for RMC++
+These code make exafs_coeff.dat for RMC++ on feff8l
 ----------
 exafs_coeff_simple
 
