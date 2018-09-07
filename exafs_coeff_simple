@@ -1,0 +1,50 @@
+#! /bin/csh -f
+
+mv feff.inp feff.inp_backup
+
+#grep -e "ATOMS" -n feff.inp_backup | sed -e 's/:.*//g'
+
+echo "make input file"
+set No = 1
+while ( ${No} <= 30 )
+ cp feff.inp_backup feff${No}.inp_backup
+ set x = `echo "0.1 * ${No}" | bc -l`
+ set xx = `printf "%1.1f" ${x}`
+ echo ${xx}
+ sed -e 's/X.X/'${xx}'/g' feff${No}.inp_backup > feff${No}.inp
+ rm -rf feff${No}.inp_backup
+ @ No = ${No} + 1
+end
+
+#echo "calculate on feff8l"
+#set No = 1
+#while ( ${No} <= 30 )
+# echo ${No}
+# mv feff${No}.inp feff.inp
+# feff8l
+# mv chi.dat chi${No}.dat
+# @ No = ${No} + 1
+#end
+
+echo "check file"
+if (-f exafs_coeff.dat) then
+  rm -rf exafs_coeff.dat
+endif
+touch exafs_coeff_row.dat
+
+echo "make exafs_coeff file"
+set Array_No = 1
+set No = 1
+while ( ${No} <= 3 )
+ echo ${No}
+ sed '/#/d' chi${No}.dat | sed -e 's/  */ /g' | sed -e 's/ //' > chi${No}_data.dat
+ cut -d ' ' -f2 chi${No}_data.dat > chi${No}_data_col2.dat
+ paste -d ',' exafs_coeff_row.dat chi${No}_data_col2.dat  > exafs_coeff.dat
+ mv exafs_coeff.dat exafs_coeff_row.dat
+ @ No = ${No} + 1
+end
+sed -e 's/,//' exafs_coeff_row.dat > exafs_coeff.dat
+
+rm -rf exafs_coeff_row.dat
+
+mv feff.inp_backup feff.inp
