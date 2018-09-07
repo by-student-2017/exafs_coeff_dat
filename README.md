@@ -48,7 +48,7 @@ for example,
 
 exafs_coeff_beta1 Ge Te
 
-automatically makes feff.inp
+automatically makes feff.inp for K-edge
 
 However, smoll distance case shows error
 
