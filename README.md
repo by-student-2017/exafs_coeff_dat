@@ -38,9 +38,11 @@ exafs_coeff_simple
 ----------
 exafs_coeff_beta1
 
-for example,
+command
 
-exafs_coeff_beta Ge Te
+chmod +x exafs_coeff_beta1
+
+exafs_coeff_beta1 Ge Te
 
 automatically makes feff.inp
 
