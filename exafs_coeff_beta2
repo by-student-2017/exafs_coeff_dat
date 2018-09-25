@@ -274,7 +274,7 @@ while ( ${No} <= 30 )
  mv feff_${AS1}"-"${AS2}_${No}.inp feff.inp
  feff8l
  if (! -e chi.dat) then
-  echo "not calculate case: set all 0.0"
+  echo "not calculating case: set all 0.0 in chi*.dat"
   cp all0.dat chi_${AS1}"-"${AS2}_${No}.dat
  else
   mv chi.dat chi_${AS1}"-"${AS2}_${No}.dat
