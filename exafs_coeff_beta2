@@ -177,7 +177,7 @@ cat << EOF > feff.inp
  TITLE ...
 
                           ***S02 =< 0.1: SCF calculation
- *  $AS1 K edge energy = $EK1 eV
+ *  ${AS1} K edge energy = ${EK1} eV
  EDGE      K
  S02       0.0
 
